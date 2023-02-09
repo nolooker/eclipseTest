@@ -8,27 +8,107 @@
 	
 	<!-- jquery = javascript + css + etc 등을 사용하는 라이브러리 -->
 	<!-- jquery.min.js 파일 내부에 여러 가지 함수들이 정의 되어 있다 -->
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	
 	<script type="text/javascript">
+	
+	
 		/*function은 동작으로 해석*/
-		$(document).ready(function(){   /*현재 이 문서가 완전히 로딩되었을 때 여기를 실행해 주세요.*/
-							alert('문서가 로딩되었습니다.') ;    /*alert() 함수는 일방적으로 띄워 주는 대화 상자*/
+							  $(document).ready(function(){   /*현재 이 문서가 완전히 로딩되었을 때 여기를 실행해 주세요.*/
+							
+								alert('문서가 로딩되었습니다.') ; 
+							
+							
+							/*alert() 함수는 일방적으로 띄워 주는 대화 상자*/
 							/* $('#myform').hide();*/ /*id 속성이 myform인 항목을 숨겨 주세요*/ 
 							
 							var a = 5 ; /* 자바 스크립트에서는 변수 정의시 var를 사용*/
-							var b = 10;
+							var b = 10 ;
 							var c = a + b ;
 							/* alert(c) ; */
-							
+				
 							/* 모든 라벨의 갯수 구하기 */
 							var label_count = $('label').length ;
-							$('#label_cnt').html(label_count) ;
+							$('#label_cnt').html('label_count') ;
+							
 							/* 모든 label을 찾아서 label_style이라는 클래스 속성을 추가하기  */
 							$('label').addClass('label_style');				
 							
 							$('#age').removeClass('label_style');
 							
-							$('label').removeClass('label_style');
+							/* css 함수를 이용하여 스타일을 지정합니다 */
+							/* 메소드를 연속적으로 명시하는 것을 메소드 체이닝이라고 합니다 */
+							$('#hobby').css('color','blue').css('background-color','red');
+							
+							
+							/* ''로만 지정하면 기본값으로 다시 설정 */
+							$('#hobby').css('color','').css('background-color','';);
+							
+							var label_string = ' ';
+							
+							/* 변수 label_string에 모든 lable의 텍스트를 문자열로 결합하여 저장 */
+							
+							$('label').each(function(){
+								label_string += $(this).text() + ' ' ;
+							});
+							
+							$('#label_text').html(label_string) ;
+							
+							$('#check01').click(function(){
+								/* alert('1번 눌러짐'); */
+								
+								var checklist = $(':checkbox') ; /* type 속성이 checkbox인 항목들 */
+								/* alert(checklist.length) ; */
+								
+								var result = ' ' ;
+								
+								for (var i = 0; i < checklist.length ; i++) {
+									
+									alert(checklist[i].checked) ; 
+										
+									if (checklist[i].checked) {
+											
+											result += checklist[i].value + ' ';
+											
+										}
+								}
+								
+								$('#check_result_01').html(result) ;
+							
+							});
+		
+							$('#check02').click(function(){
+								
+								/* input 태그 중에서 type 속성이 checkbox인 항목들 */
+								var checklist = $("input[type='checkbox']:checked") ; 
+								
+								var result = ' ' ;
+								
+								for (var i = 0; i < checklist.length ; i++) {
+									result += checklist[i].value + ' ' ;
+																
+								$('#check_result_02').html(result) ;
+							
+							});
+							
+							
+							$('#radio01').click(function(){
+								
+								var checklist = $(':radio') ; /* type 속성이 radio인 항목들 */
+																
+								var result = ' ' ;
+								for (var i = 0; i < list.length ; i++) {
+									if(list[i].checked){
+										result += list[i].value + ' ';
+										}
+									}
+								$('#radio_result_01').html(result) ;
+							
+							});
+							
+							
+							
 	});
 		
 	</script>
@@ -104,7 +184,21 @@
 		</form>
 		
 		<br/>
+		
 		라벨 개수 : <span id="label_cnt"></span><br/>
+		라벨 문구 : <span id="label_text"></span><br/><br/>
+		
+		<button id="check01">체크 요소 확인 01</button><br/>
+		
+		<button id="check02">체크 요소 확인 02</button><br/>
+		
+		<button id="radio01">라디오 요소 확인 01</button><br/>
+		
+		체크 결과 01 : <span id="check_result_01"></span><br/>
+		체크 결과 02 : <span id="check_result_02"></span><br/>
+		
+		라디오 결과 01 : <span id="radio_result_01"></span><br/>
+		
 		
 </body>
 </html>
