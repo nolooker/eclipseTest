@@ -1,0 +1,21 @@
+. 현재 위치
+.. 상위 폴더
+/ 폴더 구분자
+
+
+ex)
+
+./../image/child_shoes5.jpg - 애기신발
+src="./../image/다운로드02.jpg" class="card-img-top" alt="나이키">
+<img src="./../image/2.jpg"class="card-img-top" alt="아디다스">
+
+
+
+https://www.w3schools.com/     = 자료 찾기 좋은 곳
+
+https://www.w3schools.com/bootstrap5/index.php    = Bootstrap5 전용
+
+https://getbootstrap.com/    = Bootstrap5 참고 사이트
+
+https://jqueryui.com/datepicker/    = Datepicker 참고 / Date : 
+
