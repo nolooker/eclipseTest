@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="./../common/bootstrap5.jsp"%>
+<%@ include file="./../common/common.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,7 @@
 					<th>
 						<div class="card" style="width: 18rem;">
 							<a href="http://www.nike.com"> <img
-								src="./../image/다운로드02.jpg" class="card-img-top" alt="나이키">
+								src="./../image/2.jpg" class="card-img-top" alt="아디다스">
 								<div class="card-body">
 									<h5 class="card-title">상품01</h5>
 									<p class="card-text">이 상품은 좋아요</p>
