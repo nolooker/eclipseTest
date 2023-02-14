@@ -1,19 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ include file="./../common/bootstrap5.jsp" %>
+	
+<%@ include file="./../common/bootstrap5.jsp" %>
+	
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bootstrap Example</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<title>Bootstrap Example</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
 	<div class="container mt-3">
 		<h2>회원 목록</h2>
 		<p>회원 목록을 보여 주는 페이지</p>
+
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -33,20 +35,20 @@
 					<td>착한 회원</td>
 				</tr>
 				<tr>
-					<td align="center">king</td>
-					<td>즐라탄</td>
-					<td>2011/01/1</td>
-					<td>11</td>
-					<td>성난 회원</td>
-				</tr>
-				<tr>
 					<td align="center">park</td>
 					<td>박영희</td>
-					<td>2021/01/20</td>
+					<td>2023/02/10</td>
+					<td>10</td>
+					<td>머찐 회원</td>
+				</tr>
+				<tr>
+					<td align="center">kim</td>
+					<td>김철수</td>
+					<td>2023/02/10</td>
 					<td>10</td>
 					<td>그냥 회원</td>
 				</tr>
-							</tbody>
+			</tbody>
 		</table>
 
 		<ul class="pagination justify-content-center">
@@ -56,15 +58,8 @@
 			<li class="page-item"><a class="page-link" href="#">3</a></li>
 			<li class="page-item disabled"><a class="page-link" href="#">4</a></li>
 			<li class="page-item"><a class="page-link" href="#">5</a></li>
-			<li class="page-item"><a class="page-link" href="#">6</a></li>
-			<li class="page-item"><a class="page-link" href="#">7</a></li>
-			<li class="page-item"><a class="page-link" href="#">8</a></li>
-			<li class="page-item"><a class="page-link" href="#">9</a></li>
 			<li class="page-item"><a class="page-link" href="#">Next</a></li>
-			<li class="page-item"><a class="page-link" href="#">...</a></li>
 		</ul>
-
 	</div>
-
 </body>
 </html>

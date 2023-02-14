@@ -9,6 +9,6 @@
 	<title>Insert title here</title>
 </head>
 <body>
-	나는 탬플릿 파일
+	여기는 bsMemberInsert2To.jsp 파일입니다.
 </body>
 </html>
