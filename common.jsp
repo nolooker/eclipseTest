@@ -7,6 +7,20 @@
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	
+	<%-- core 라이브러리 --%>
+	<%-- uri는 unique한 값, prefix는 접두사(네임스페이스)  --%>
+	<%-- 네임스페이스는 서로 다른 영역을 식별하기 위한 별칭과 같은 개념  --%>
+	
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	
+	<%-- 
+			JSTL : Jsp Standard Tag Library
+			JSP 코딩을 지원하기 위한 표준 태그 라이브러리
+			준비물 ) jstl-1.2.jar, standard.jar 파일 lib에 넣기
+			taglib 지시어를 명시해 주어야 함. (상단에 %@ taglib prefix="c"uri="http://java.sun.com/jsp/jstl/core" % 입력)
+			필요한 태그 라이브러리를 적절히 사용하면 됨.		
+	 --%>
+	
 	<!-- for sweet alert -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>	
 </head>

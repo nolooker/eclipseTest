@@ -1,6 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@ page import="com.shopping.dao.ProductDao" %>
+<%@ page import="com.shopping.model.Product" %>
+
 <%@ include file="./../common/bootstrap5.jsp"%>
+<%@ include file="./../common/common.jsp"%>
+
+<%
+
+	ProductDao dao = new ProductDao();
+	Product bean = dao.getDataByPk(10);
+
+	// scope : 데이터를 저장할 공간/영역(캐비넷)
+	// attribute(속성) : scope(영역)에 저장될 데이터
+	// 바인딩 : attribute들을 scope에 저장하는 행위/동작
+	
+	request.setAttribute("su",12345);
+	request.setAttribute("xxx",bean);
+	
+	int su = (Integer)request.getAttribute("su") ;  // auto unboxing
+	Product yyy = (Product)request.getAttribute("xxx");
+	
+%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +51,10 @@
   	  		/* $('#inputdate').datepicker(); */
   	  		$('#inputdate').datepicker({dateFormat: "yy/mm/dd"}); 
   	  	 
+  	  		/* 카테고리 확인 */
+  	  		var category = '${requestScope.xxx.comments}';
+  	  		/* alert(category) ; */
+  	  		$("option[value='"+category+"']").attr('selected',true);
   		});
   		
   		function validCheck(){
@@ -140,25 +168,26 @@
 </head>
 <body>
 	<div class="container mt-3 col-md-5">
-		<h2>상품 등록</h2>
-		<p>사용자들이 구매할 상품을 등록해 주는 페이지</p>
+		<h2>상품 수정</h2>
+		<p>관리자가 상품을 수정하는 페이지</p>
 		
 		<form>
 			<div class="input-group">
 				<span class="input-group-text col-md-2">상품 번호</span> 
-				<input id="num" name="num" type="number" class="form-control" placeholder="">
+				<input id="fakenum" name="fakenum" type="number" disabled="disabled"class="form-control" placeholder=""value="<%=yyy.getNum()%>">
+				<input id="num" name="num" type="hidden" value="<%=yyy.getNum()%>">
 			</div> 
 			<div class="input-group">
 				<span class="input-group-text col-md-2">상품명</span> 
-				<input id="name" name="name" type="text" class="form-control" placeholder="">
+				<input id="name" name="name" type="text" class="form-control" placeholder=""value="<%=yyy.getName()%>">
 			</div>
 			<div class="input-group">
 				<span class="input-group-text col-md-2">제조 회사</span> 
-				<input id="company" name="company" type="text" class="form-control" placeholder="">
+				<input id="company" name="company" type="text" class="form-control" placeholder=""value="<%=yyy.getCompany()%>">
 			</div>
 			<div class="input-group">
 				<span class="input-group-text col-md-2">코멘트</span> 
-				<input id="comments" name="comments" type="text" class="form-control" placeholder="">
+				<input id="comments" name="comments" type="text" class="form-control" placeholder=""value="${requestScope.xxx.comments}">
 			</div>
 			<div class="input-group">
 				<span class="input-group-text col-md-2">이미지01</span> 
@@ -174,19 +203,19 @@
 			</div>			
 			<div class="input-group">
 				<span class="input-group-text col-md-2">재고</span> 
-				<input id="stock" name="stock" type="number" class="form-control" placeholder="">
+				<input id="stock" name="stock" type="number" class="form-control" placeholder=""value="${requestScope.xxx.stock}">
 			</div>			
 			<div class="input-group">
 				<span class="input-group-text col-md-2">단가</span> 
-				<input id="price" name="price" type="number" class="form-control" placeholder="">
+				<input id="price" name="price" type="number" class="form-control" placeholder=""value="${requestScope.xxx.price}">
 			</div>			
 			<div class="input-group">
 				<span class="input-group-text col-md-2">포인트</span> 
-				<input id="point" name="point" type="number" class="form-control" placeholder="">
+				<input id="point" name="point" type="number" class="form-control" placeholder=""value="${requestScope.xxx.point}">
 			</div>			
 			<div class="input-group">
 				<span class="input-group-text col-md-2">비고</span> 
-				<input id="remark" name="remark" disabled="disabled" type="text" class="form-control" placeholder="">
+				<input id="remark" name="remark" disabled="disabled" type="text" class="form-control" placeholder=""value="${requestScope.xxx.remark}">
 			</div>
 				
 			<div class="input-group">
@@ -200,7 +229,7 @@
 			</div>
 			<div class="input-group">
 				<span class="input-group-text col-md-2">입고 일자</span> 
-				<input id="inputdate" name="inputdate" type="datetime" class="form-control" placeholder="">
+				<input id="inputdate" name="inputdate" type="datetime" class="form-control" placeholder=""value="${requestScope.xxx.inputdate}">
 			</div>
 			<div id="buttonset" class="input-group">
 				<button type="submit" class="btn btn-primary btn-lg"

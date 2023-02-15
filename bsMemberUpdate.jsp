@@ -3,8 +3,10 @@
 <%-- 골뱅이로 시작하는 항목은 지시어입니다. --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <%@ page import="com.shopping.dao.MemberDao" %>
 <%@ page import="com.shopping.model.Member" %>
+
 <%@ include file="./../common/bootstrap5.jsp"%>
 <%@ include file="./../common/common.jsp"%>
 
