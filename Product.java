@@ -2,7 +2,7 @@ package com.shopping.model;
 
 public class Product {
 	
-	private int number ;
+	private int num ;
 	private String name ;
 	private String company ;
 	private String comments ;
@@ -20,12 +20,12 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getNumber() {
-		return number;
+	public int getNum() {
+		return num;
 	}
 
-	public void setNumber(int number) {
-		this.number = number;
+	public void setNumber(int num) {
+		this.num = num;
 	}
 
 	public String getName() {
@@ -124,10 +124,10 @@ public class Product {
 		this.inputdate = inputdate;
 	}
 
-	public Product(int number, String name, String company, String comments, String image01, String image02,
+	public Product(int num, String name, String company, String comments, String image01, String image02,
 			String image03, int stock, int price, int point, String remark, String category, String inputdate) {
 		super();
-		this.number = number;
+		this.num = num;
 		this.name = name;
 		this.company = company;
 		this.comments = comments;
@@ -144,7 +144,7 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [number=" + number + ", name=" + name + ", company=" + company + ", comments=" + comments
+		return "Product [number=" + num + ", name=" + name + ", company=" + company + ", comments=" + comments
 				+ ", image01=" + image01 + ", image02=" + image02 + ", image03=" + image03 + ", stock=" + stock
 				+ ", price=" + price + ", point=" + point + ", remark=" + remark + ", category=" + category
 				+ ", inputdate=" + inputdate + "]";

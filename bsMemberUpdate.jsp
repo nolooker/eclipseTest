@@ -13,7 +13,7 @@
 <%
 	// 여기는 스트립트릿이라고 하며, 자바 코딩이 가능합니다.
 	MemberDao dao = new MemberDao();
-	Member bean = dao.getDataByPk("hong") ;
+	Member bean = dao.getDataByPk01("hong") ;
 %>
 	
 <!DOCTYPE html>

@@ -40,7 +40,7 @@
 		<form>
 			<div class="input-group">
 				<span class="input-group-text col-md-2">아이디</span> 
-				<input id="id" name="id" type="number" class="form-control" placeholder="">
+				<input id="id" name="id" type="text" class="form-control" placeholder="">
 			</div> 
 			<div class="input-group">
 				<span class="input-group-text col-md-2">이름</span> 

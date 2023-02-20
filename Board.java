@@ -9,9 +9,9 @@ public class Board {
 	private String regdate ;
 	private int readhit ;
 	private String remark ;
-	private int groupno ;
-	private int orderno ;
-	private int depth ;
+	private int groupno ; // 게시글 그룹 번호
+	private int orderno ; // 게시할 순번
+	private int depth ; // 글의 깊이
 	@Override
 	public String toString() {
 		return "Board [no=" + no + ", writer=" + writer + ", subject=" + subject + ", content=" + content + ", regdate="

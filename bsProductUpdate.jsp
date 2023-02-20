@@ -10,7 +10,7 @@
 <%
 
 	ProductDao dao = new ProductDao();
-	Product bean = dao.getDataByPk(10);
+	Product bean = dao.getDataByPk01(10);
 
 	// scope : 데이터를 저장할 공간/영역(캐비넷)
 	// attribute(속성) : scope(영역)에 저장될 데이터

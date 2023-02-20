@@ -7,7 +7,7 @@
 <%
 	// 여기는 스트립트릿이라고 하며, 자바 코딩이 가능합니다.
 	BoardDao dao = new BoardDao();
-	Board bean = dao.getDataByPk(10) ;
+	Board bean = dao.getDataByPk01(10) ;
 %>
 
 <!DOCTYPE html>
