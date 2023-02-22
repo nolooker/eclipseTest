@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.shopping.transport.VehicleController;
 import com.shopping.utility.MyUtility;
 
 @WebServlet(urlPatterns = {"/Traffic"}, initParams = {
@@ -32,7 +33,7 @@ public class TransportationServlet extends HttpServlet{
 	private Map<String, String> settingMap = null ; 
 	
 	// map for transportation.txt file
-	private Map<String, String> transportationMap = null ;
+	private Map<String, VehicleController> transportationMap = null ;
 	
 	
 	@Override
@@ -61,6 +62,10 @@ public class TransportationServlet extends HttpServlet{
 		
 		this.application.setAttribute("map", this.settingMap);
 		
+		this.transportationMap = MyUtility.getTransportationMap(txtTransportationFile);
+		
+		System.out.println(this.transportationMap.size());
+		
 	}
 
 	@Override
@@ -81,6 +86,17 @@ public class TransportationServlet extends HttpServlet{
 		
 		String method = request.getMethod().toLowerCase() ;
 		System.out.println("method : " + method) ;
+		
+		String command = request.getParameter("command") ;
+		System.out.println("command is [" +command + "]");
+		
+		VehicleController controller = this.transportationMap.get(command) ;
+		
+			if(controller != null) {
+				controller.drive();
+			}else{
+				System.out.println("request command is not found");
+			}
 		
 				String gotopage = "example/transportationTo.jsp" ;
 				RequestDispatcher dispatcher = request.getRequestDispatcher(gotopage) ;
